@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <sitemap>
+    <loc>https://bundelicrafts.com/static/sitemap.xml</loc>
+    <lastmod>2025-11-26T09:14:23.947Z</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://bundelicrafts.com/product/sitemap-1.xml</loc>
+    <lastmod>2025-11-26T09:14:23.947Z</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://bundelicrafts.com/blog/sitemap-1.xml</loc>
+    <lastmod>2025-11-26T09:14:23.947Z</lastmod>
+  </sitemap>
+</sitemapindex>

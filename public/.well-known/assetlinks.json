@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.bundelkhandapp",
+      "sha256_cert_fingerprints": [
+        "FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C",
+        "B0:6A:95:AC:58:9B:31:3A:73:A2:AD:61:42:6C:8E:EE:FA:44:DD:84:81:32:25:A6:F0:9C:4A:8A:65:FC:1D:2F"
+      ]
+    }
+  }
+]
