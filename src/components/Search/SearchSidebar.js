@@ -49,7 +49,7 @@ const SearchSidebar = ({ isOpen, setIsOpen }) => {
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetContent className="bg-white w-full lg:max-w-[500px]">
+      <SheetContent className="bg-bg-light w-full lg:max-w-[500px]">
         {/* Search bar */}
         <form
           onSubmit={handleSubmit}
