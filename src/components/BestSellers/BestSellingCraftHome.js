@@ -23,7 +23,7 @@ function BestSellingCraftHome() {
   return (
     <section className="py-5 bg-[#F5EFE0]">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between mb-10 flex-wrap gap-4">
+        <div className="flex items-center justify-between mb-10  gap-4">
           <div>
             <p className="text-xs tracking-widest text-[#C8A96A] uppercase mb-2">
               Handpicked for you

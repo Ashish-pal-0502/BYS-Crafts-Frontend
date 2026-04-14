@@ -1,17 +1,20 @@
+"use client";
+import { useRouter } from "next/navigation";
 import React from "react";
-
+import { FiShield, FiTruck, FiTrendingUp, FiMessageSquare } from "react-icons/fi";
 import { FaArrowRight } from "react-icons/fa";
 
 function Hero() {
+  const router = useRouter();
   return (
     <section className="bg-[#faf6ed] relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-5 py-6 lg:py-12 flex flex-col-reverse lg:grid lg:grid-cols-2 gap-10 items-center">
+      <div className="max-w-6xl mx-auto px-5 py-6 lg:py-12 flex flex-col-reverse lg:grid lg:grid-cols-2 gap-5 items-center">
         <div className="text-center lg:text-left">
           <div className="inline-block border border-[#E8C547] text-text-yellowText text-xs md:text-sm px-4 py-2 rounded-full mb-5 bg-[#F5EFE0]">
             ⭐ Trusted by 12,000+ customers
           </div>  
 
-          <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-text-primaryText leading-tight">
+          <h1 className="text-3xl lg:text-5xl font-bold text-text-primaryText leading-tight">
             Where every craft <br />
             tells an{" "}
             <span className="text-text-redText italic font-bold">
@@ -25,14 +28,13 @@ function Hero() {
             artisan heritage to your doorstep.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 mt-5 justify-center lg:justify-start">
-            <button className="bg-[#1E3A5F] text-white px-6 py-3 rounded-md text-sm font-medium inline-flex items-center gap-2">
-    Explore collections
-    <FaArrowRight className="text-sm" />
-  </button>
-            <button className="border border-[#1B3A5C] px-6 py-3 rounded-md text-sm font-medium text-text-primaryText">
-              Meet our artisans
-            </button>
+          <div className="flex flex-col sm:flex-row  mt-5 justify-center lg:justify-start">
+         <button 
+            onClick={() => router.push("/collections")}
+         className="bg-[#1E3A5F] text-white px-6 py-3 rounded-md text-sm font-medium inline-flex items-center justify-center gap-2">
+  Explore collections
+  <FaArrowRight className="text-sm" />
+</button>
           </div>
 
           <div className="flex justify-center  lg:justify-start gap-8 mt-8 text-sm ">
@@ -89,7 +91,7 @@ function Hero() {
 
             <div className="flex flex-col gap-4 sm:gap-6 mt-6 sm:mt-8">
               <div className="bg-[#E8DECE] p-4 sm:p-5 rounded-2xl w-36 sm:w-40 h-44 sm:h-48 flex flex-col justify-between shadow-md">
-                <div className="self-end bg-yellow-400 text-[10px] sm:text-xs px-2 py-1 rounded-full font-medium">
+                <div className="self-end bg-[#E8C547] text-[10px] sm:text-xs px-3 py-1 rounded-[6px] font-medium">
                   ₹1,299
                 </div>
                 <div className="flex flex-col items-center justify-center flex-1 opacity-60">
@@ -104,7 +106,7 @@ function Hero() {
               </div>
 
               <div className="bg-[#10283E] text-white p-4 sm:p-5 rounded-2xl w-36 sm:w-40 h-44 sm:h-48 flex flex-col justify-between shadow-md">
-                <div className="self-end bg-yellow-400 text-[10px] sm:text-xs px-2 py-1 rounded-full text-black font-medium">
+                <div className="self-end bg-[#E8C547] text-[10px] sm:text-xs px-3 py-1 rounded-[6px] text-black font-medium">
                   ₹899
                 </div>
                 <div className="flex flex-col items-center justify-center flex-1 opacity-80">
@@ -122,14 +124,40 @@ function Hero() {
         </div>
       </div>
 
-      <div className="bg-[#0F1E2F] text-white py-4 text-xs">
-        <div className="max-w-6xl mx-auto px-5 flex flex-wrap justify-center lg:justify-between gap-4 text-center">
-          <p>🛡️ 100% authentic handmade</p>
-          <p>🚚 Free shipping above ₹1999</p>
-          <p>📈 Fair trade certified</p>
-          <p>💬 Artisan stories with every purchase</p>
-        </div>
-      </div>
+     
+      <div className="bg-[#0F1E2F] text-white py-4">
+<div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row items-center lg:justify-between gap-6">
+
+    <div className="flex items-center gap-4">
+      <FiShield className="text-yellow-400 text-lg" />
+      <p className="text-sm text-[#FFFFFFB2]">
+        100% authentic handmade
+      </p>
+    </div>
+
+    <div className="flex items-center gap-4">
+      <FiTruck className="text-yellow-400 text-lg" />
+      <p className="text-sm text-[#FFFFFFB2]">
+        Free shipping above ₹1,999
+      </p>
+    </div>
+
+    <div className="flex items-center gap-4">
+      <FiTrendingUp className="text-yellow-400 text-lg" />
+      <p className="text-sm text-[#FFFFFFB2]">
+        Fair trade certified
+      </p>
+    </div>
+
+    <div className="flex items-center gap-4">
+      <FiMessageSquare className="text-yellow-400 text-lg" />
+      <p className="text-sm text-[#FFFFFFB2]">
+        Artisan stories with every purchase
+      </p>
+    </div>
+
+  </div>
+</div>
     </section>
   );
 }

@@ -73,9 +73,7 @@ export const Header = () => {
                 >
                   Collections
                 </Link>
-                {/* <Link href="/artisans" className="hover:opacity-70 transition">
-                  Artisans
-                </Link> */}
+              
                 <Link
                   href="/new-arrivals"
                   className="hover:opacity-70 transition"
@@ -100,7 +98,7 @@ export const Header = () => {
               <button  onClick={() => router.push("/cart")} className="relative">
                 <ShoppingCart size={20} />
                 {cartLength > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-[#C8A96A] text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">
+                  <span className="absolute -top-3 -right-3 bg-[#E8C547] text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">
                     {cartLength}
                   </span>
                 )}
