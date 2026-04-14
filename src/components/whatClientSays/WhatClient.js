@@ -8,25 +8,25 @@ import WhatClientSaysCard from "./WhatClientSaysCard";
 
 const data = [
   {
-    name: "Priya Sharma",
-    location: "Mumbai, Maharashtra",
-    initials: "PS",
+    name: "Ankit Verma",
+    location: "Lucknow, Uttar Pradesh",
+    initials: "AV",
     message:
-      "The Pashmina shawl I ordered is exquisite. The packaging included a handwritten note from the artisan in Kashmir. This is how shopping should feel.",
+      "I ordered a handwoven kurta and honestly, the quality surprised me. It feels authentic and you can see the effort put in by the artisan. Definitely buying again.",
   },
   {
-    name: "Arjun Kapoor",
-    location: "Toronto, Canada",
-    initials: "AK",
+    name: "Sneha Iyer",
+    location: "Chennai, Tamil Nadu",
+    initials: "SI",
     message:
-      "I bought the Dokra jewelry set as a gift and it was a huge hit. The craftsmanship is remarkable — you can tell these are made by skilled hands, not machines.",
+      "The terracotta decor pieces I received are beautiful and very unique. It’s nice to support local artisans while also getting something so elegant for my home.",
   },
   {
-    name: "Riya Mehra",
-    location: "Bengaluru, Karnataka",
-    initials: "RM",
+    name: "Rahul Chauhan",
+    location: "Jaipur, Rajasthan",
+    initials: "RC",
     message:
-      "Finally found a brand that cares about artisans as much as aesthetics. The block-print cushion covers are now the centerpiece of our living room.",
+      "Bought a handcrafted leather wallet and the finishing is top-notch. You can feel the difference compared to factory-made products. Worth every rupee.",
   },
 ];
 
