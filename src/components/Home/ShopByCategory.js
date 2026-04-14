@@ -28,7 +28,7 @@ const CategoryCard = ({ category, index }) => {
     <Link href={`/collections/${category._id}`}>
       <Card
         className={`relative rounded-xl p-6 flex flex-col justify-between 
-        h-56 sm:h-64 md:h-72 w-full
+        h-64  md:h-80 w-full
         shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${bgColor}`}
       >
         <div className="w-12 h-12 rounded-full overflow-hidden bg-white/20 flex items-center justify-center">

@@ -13,13 +13,9 @@ const Footer = () => {
               BYS CRAFTS
             </h3>
 
-            {/* <div className="flex-1">
-              <Link href="/" className="flex items-center">
-                <img src="/BYDLogo.webp" className="h-10" />
-              </Link>
-            </div> */}
+        
 
-            <p className="text-sm text-gray-300 mt-4 leading-relaxed max-w-xs">
+            <p className="text-sm text-[#FFFFFF99] mt-4 leading-relaxed max-w-xs">
               Connecting India's finest artisans with conscious customers
               worldwide. Every craft has a story. Every purchase has an impact.
             </p>
@@ -28,31 +24,48 @@ const Footer = () => {
               {[Facebook, Instagram, Youtube].map((Icon, i) => (
                 <div
                   key={i}
-                  className="w-9 h-9 flex items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition cursor-pointer"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-[#FFFFFF1F] transition cursor-pointer"
                 >
-                  <Icon size={16} />
+                  <Icon color="#FFFFFF80" size={16} />
                 </div>
               ))}
             </div>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold mb-4 text-gray-200">Shop</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li className="hover:text-white cursor-pointer">New arrivals</li>
-              <li className="hover:text-white cursor-pointer">Bestsellers</li>
-              <li className="hover:text-white cursor-pointer">Textiles</li>
-              <li className="hover:text-white cursor-pointer">Pottery</li>
-              <li className="hover:text-white cursor-pointer">Jewelry</li>
-              <li className="hover:text-white cursor-pointer">Home decor</li>
-            </ul>
+            <h4 className="text-sm font-semibold mb-4 text-white">Shop</h4>
+          <ul className="space-y-4 text-sm text-[#FFFFFF80]">
+  <li>
+    <Link href="/collections" className="block hover:text-white transition cursor-pointer">
+      Collections
+    </Link>
+  </li>
+
+  <li>
+    <Link href="/new-arrivals" className="block hover:text-white transition cursor-pointer">
+      New Arrivals
+    </Link>
+  </li>
+
+  <li>
+    <Link href="/blogs" className="block hover:text-white transition cursor-pointer">
+      Blogs
+    </Link>
+  </li>
+
+  <li>
+    <Link href="/about-us" className="block hover:text-white transition cursor-pointer">
+      About Us
+    </Link>
+  </li>
+</ul>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold mb-4 text-gray-200">
+            <h4 className="text-sm font-semibold mb-4 text-white">
               Company
             </h4>
-            <ul className="space-y-2 text-sm text-gray-400">
+            <ul className="space-y-2 text-sm text-[#FFFFFF80]">
               <li className="hover:text-white cursor-pointer">Our story</li>
               <li className="hover:text-white cursor-pointer">
                 Artisan partners
@@ -64,10 +77,10 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold mb-4 text-gray-200">
+            <h4 className="text-sm font-semibold mb-4 text-white">
               Support
             </h4>
-            <ul className="space-y-2 text-sm text-gray-400">
+            <ul className="space-y-2 text-sm text-[#FFFFFF80]">
               <li className="hover:text-white cursor-pointer">Contact us</li>
               <li className="hover:text-white cursor-pointer">Shipping info</li>
               <li className="hover:text-white cursor-pointer">
@@ -80,7 +93,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-400 text-center md:text-left">
+          <p className="text-xs text-[#FFFFFF99] text-center md:text-left">
             © {new Date().getFullYear()} BYS Crafts. Crafted with care in India.
           </p>
 
@@ -88,7 +101,7 @@ const Footer = () => {
             {["UPI", "Visa", "Mastercard", "RuPay", "COD"].map((item, i) => (
               <span
                 key={i}
-                className="text-xs px-3 py-1 border border-white/20 rounded-md text-gray-300"
+                className="text-xs px-3 py-1 border border-white/20 rounded-md text-[#FFFFFF80]"
               >
                 {item}
               </span>

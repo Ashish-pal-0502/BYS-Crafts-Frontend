@@ -34,7 +34,7 @@ const WhatClient = () => {
   return (
     <section className="bg-[#0F1E2F] py-16 px-4">
       <div className="max-w-6xl mx-auto text-center">
-        <p className="text-xs tracking-[0.25em] text-[#C8A96A] uppercase mb-3">
+        <p className="text-xs tracking-[0.25em] text-text-yellowText uppercase mb-3">
           What our customers say
         </p>
 

@@ -39,7 +39,8 @@ const BestSellingCraftCard = ({ product }) => {
       <div className="bg-[#FAF6ED] rounded-xl overflow-hidden border border-[#1B3A5C0F]  transition flex flex-col h-full">
 
      
-        <div className="relative bg-[#eae2d6] h-[220px] flex-shrink-0">
+        {/* <div className="relative bg-[#eae2d6] h-[220px] flex-shrink-0"> */}
+        <div className="relative bg-[#eae2d6] aspect-square overflow-hidden">
           {discount > 0 && (
             <span className="absolute top-3 left-3 text-xs bg-red-500 text-white px-2 py-1 rounded">
               {discount}% off
@@ -69,15 +70,15 @@ const BestSellingCraftCard = ({ product }) => {
 
         
           <div className="space-y-2 min-h-[110px]">
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-text-yellowText">
               By {artisanInfo?.artisan?.name || "Artisan"}
             </p>
 
-            <h3 className="text-sm font-medium text-gray-900 line-clamp-2 min-h-[40px]">
+            <h3 className="text-sm font-medium text-text-primaryText line-clamp-2 min-h-[40px]">
               {name}
             </h3>
 
-            <p className="text-xs text-gray-500 line-clamp-2 min-h-[32px]">
+            <p className="text-xs text-text-secondaryText line-clamp-2 min-h-[32px]">
               {artisanInfo?.artisanDescription || ""}
             </p>
           </div>
@@ -87,7 +88,7 @@ const BestSellingCraftCard = ({ product }) => {
             <div className="flex items-center justify-between">
 
               <div className="flex items-center gap-2 text-sm">
-                <span className="font-semibold text-black">
+                <span className="font-semibold font-sans text-[#0F1E2F]">
                   ₹{finalPrice.toFixed(0)}
                 </span>
 
@@ -98,8 +99,8 @@ const BestSellingCraftCard = ({ product }) => {
                 )}
               </div>
 
-              <div className="flex items-center gap-1 text-xs text-gray-500">
-                <Star size={14} className="fill-yellow-400 text-yellow-400" />
+              <div className="flex items-center gap-1 text-xs text-text-secondaryText">
+                <Star size={14} className="fill-[#E8C547] text-[#E8C547]" />
                 {rating || 4.5}
               </div>
 

@@ -7,7 +7,7 @@ const WhatClientSaysCard = ({ data }) => {
     <div className="bg-[#11263D] border border-white/10 rounded-2xl p-6 text-left h-full flex flex-col justify-between hover:shadow-lg transition">
       <div className="flex gap-1 mb-4">
         {[...Array(5)].map((_, i) => (
-          <Star key={i} size={14} className="fill-[#C8A96A] text-[#C8A96A]" />
+          <Star key={i} size={14} className="fill-[#E8C547] text-[#E8C547]" />
         ))}
       </div>
 
