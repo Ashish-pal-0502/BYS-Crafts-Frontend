@@ -57,8 +57,8 @@ const BlogHero = () => {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {allblogs?.slice(0, 4).map((blogData) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-6">
+          {allblogs?.slice(0, 3).map((blogData) => (
             <BlogCard key={blogData._id} blogData={blogData} />
           ))}
         </div>

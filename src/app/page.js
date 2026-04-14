@@ -36,22 +36,5 @@ export default function Home() {
       <NewArrivals />
       <BlogHero />
     </div>
-
-    // <div>
-    //   {/* <NewBanner /> */}
-    //   <Banner />
-    //   <ShopByCategory />
-    //   <FeaturedProducts />
-    //   {/* browse by category */}
-    //   <BrowseByDistricts />
-    //   <NewArrivals />
-    //   {/* <OurMission /> */}
-    //   {/* browse by districts  */}
-    //   {/* <Hero /> */}
-    //   <BlogHero />
-
-    //   {/* <WhatClient /> */}
-    //   {/* <SellPartener /> */}
-    // </div>
   );
 }
