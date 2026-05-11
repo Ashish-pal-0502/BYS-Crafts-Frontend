@@ -1,4 +1,3 @@
-"use client";
 import { useContext } from "react";
 import AuthContext from "./context";
 import { jwtDecode } from "jwt-decode";
@@ -9,13 +8,14 @@ const useAuth = () => {
   const logIn = (authToken) => {
     const user = jwtDecode(authToken);
     setUser(user);
-    sessionStorage.setItem("token", JSON.stringify(authToken));
+    localStorage.setItem("token", authToken);
+    document.cookie = `token=${authToken}; path=/; max-age=2592000`;
   };
 
   const logOut = () => {
-    console.log("hit");
     setUser(null);
-    sessionStorage.removeItem("token");
+    localStorage.removeItem("token");
+    document.cookie = "token=; path=/; max-age=0";
   };
 
   return { user, logIn, logOut };

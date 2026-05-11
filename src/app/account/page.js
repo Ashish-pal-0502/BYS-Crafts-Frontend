@@ -1,30 +1,29 @@
 
 
 "use client";
-import React, { useState ,useEffect} from "react";
 import useAuth from "@/auth/useAuth";
-import { useRouter } from "next/navigation";
-import OrderPage from "@/components/Account/OrderPage";
 import AddressPage from "@/components/Account/AddressPage";
 import MyProfile from "@/components/Account/MyProfile";
+import OrderPage from "@/components/Account/OrderPage";
+import { useState } from "react";
 
-import WishlistSection from './../../components/Account/WishlistSection';
+import AccountSettings from "@/components/Settings/AccountSettings";
 import {
   FiGrid,
-  FiShoppingBag,
   FiHeart,
-  FiMapPin,
-  FiUser,
-  FiSettings,
   FiLogOut,
+  FiMapPin,
+  FiSettings,
+  FiShoppingBag,
+  FiUser,
 } from "react-icons/fi";
-import AccountSettings from "@/components/Settings/AccountSettings";
+import WishlistSection from './../../components/Account/WishlistSection';
 
 const Page = () => {
   const { user, logOut } = useAuth();
-  const router = useRouter();
+
   const [activeTab, setActiveTab] = useState("dashboard");
-  const [shouldCheckAuth, setShouldCheckAuth] = useState(false);
+  
   
     const menuItems = [
     { key: "dashboard", label: "Dashboard", icon: FiGrid },
@@ -35,30 +34,6 @@ const Page = () => {
     { key: "settings", label: "Settings", icon: FiSettings },
   ];
 
-  useEffect(() => {
-  const timer = setTimeout(() => {
-    setShouldCheckAuth(true);
-  }, 500); 
-
-  return () => clearTimeout(timer);
-}, []); 
-
-useEffect(() => {
-  if (shouldCheckAuth && !user) {
-    router.push("/");
-  }
-}, [shouldCheckAuth, user]);
-
-
-if (!shouldCheckAuth) {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-[#FAF6ED]">
-      <p className="text-gray-500 text-sm">Loading...</p>
-    </div>
-  );
-}
-
-if (!user) return null;
 
   return (
     <div className="w-full bg-[#FAF6ED] min-h-screen px-4 md:px-10 py-6">
@@ -104,7 +79,7 @@ if (!user) return null;
   <div className="my-4 border-t border-[#e6dfd5]" />
 
   <div
-    onClick={logOut}
+    onClick={() => logOut()}
     className="flex items-center gap-3 px-4 py-3 text-red-500 rounded-xl cursor-pointer hover:bg-red-50"
   >
     <FiLogOut size={18} />

@@ -4,23 +4,42 @@ import { jwtDecode } from "jwt-decode";
 import AuthContext from "@/auth/context";
 import Footer from "@/components/Footer/Footer";
 import { Header } from "./Navbar/Header";
+import CartSidebar from './Cart/CartSidebar';
+import AccountSidebar from './Cart/AccountSidebar';
+
 
 const ClientOnly = ({ children }) => {
   const [user, setUser] = useState();
+    const [cartOpen, setCartOpen] = useState(false); 
+      const [accountOpen, setAccountOpen] = useState(false);
 
-  const restoreUser = async () => {
-    const user = await sessionStorage.getItem("token");
-    if (user) setUser(jwtDecode(user));
-  };
+ useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      try {
+        setUser(jwtDecode(token));
+      } catch (error) {
+        console.error("Invalid token:", error);
+        localStorage.removeItem("token");
+      }
+    }
 
-  useEffect(() => {
-    restoreUser();
+    // Expose global function to open cart
+    window.openCartSidebar = () => {
+      setCartOpen(true);
+    };
+
+    return () => {
+      delete window.openCartSidebar;
+    };
   }, []);
 
   return (
     <AuthContext.Provider value={{ user, setUser }}>
-      <Header />
+      <Header   setCartOpen={setCartOpen}/>
       <main className="relative ">{children}</main>
+      <CartSidebar isOpen={cartOpen} onClose={() => setCartOpen(false)} onOpenAccount={() => setAccountOpen(true)}  />
+         <AccountSidebar isOpen={accountOpen} setIsOpen={setAccountOpen} /> 
       <Footer />
     </AuthContext.Provider>
   );

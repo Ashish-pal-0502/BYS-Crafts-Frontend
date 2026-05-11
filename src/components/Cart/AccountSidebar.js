@@ -1,56 +1,73 @@
-import React, { useState } from "react";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
+import { useState } from "react";
 import LoginForm from "../Account/LoginForm";
-import Register from "../Account/Register";
-import { ScrollArea } from "../ui/scroll-area";
+
+import OTPVerificationModal from './../Account/OtpVerificationModal';
 
 const AccountSidebar = ({ isOpen, setIsOpen }) => {
-  const [isRegistering, setIsRegistering] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
+  const [isVerificationModalOpen, setIsVerificationModalOpen] = useState(false);
+  const [mobile, setMobile] = useState("");
+  const [email, setEmail] = useState("");
+  const [isEmailMode, setIsEmailMode] = useState(true);
 
-  const handleToggleForm = () => {
-    setIsRegistering(!isRegistering);
-    setIsLogin(!isLogin);
+  // Close the main sidebar when OTP modal opens
+  const handleOpenOTPModal = () => {
+    setIsOpen(false);
+    setIsVerificationModalOpen(true);
   };
 
   return (
-    <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetContent className="bg-bg-dark w-full lg:max-w-[500px] h-full flex flex-col">
-        <SheetHeader>
-          <SheetTitle className="text-left mb-8">My Account</SheetTitle>
-        </SheetHeader>
-        <div className="flex-1 overflow-y-auto pr-2">
-          {isRegistering || isLogin ? (
-            <Register
-              setIsLogin={setIsLogin}
-              isOpen={isOpen}
-              setIsOpen={setIsOpen}
-            />
-          ) : (
+    <>
+      {/* Main Login Sheet */}
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
+        <SheetContent className="bg-bg-dark w-full lg:max-w-[500px] h-full flex flex-col z-[100]">
+          <SheetHeader>
+            <SheetTitle className="text-left">My Account</SheetTitle>
+          </SheetHeader>
+          <div className="flex-1 overflow-y-auto pr-2">
             <LoginForm
-              setIsRegistering={setIsRegistering}
               isOpen={isOpen}
               setIsOpen={setIsOpen}
+              setIsVerificationModalOpen={handleOpenOTPModal}
+              mobile={mobile}
+              setMobile={setMobile}
+              email={email}
+              setEmail={setEmail}
+              isEmailMode={isEmailMode}
+              setIsEmailMode={setIsEmailMode}
             />
-          )}
-        </div>
-       <p className="mt-4 text-center font-bold">
-  {isRegistering ? (
-    <span className="text-text-secondaryText">Already have an account? </span>
-  ) : (
-    <span className="text-text-secondaryText">Don't have an account? </span>
-  )}
-  <button onClick={handleToggleForm} className="text-primaryText underline">
-    {isRegistering ? "Login" : "Register"}
-  </button>
-</p>
-      </SheetContent>
-    </Sheet>
+          </div>
+        </SheetContent>
+      </Sheet>
+
+      {/* OTP Verification Sheet */}
+      <Sheet open={isVerificationModalOpen} onOpenChange={setIsVerificationModalOpen}>
+        <SheetContent className="bg-bg-dark w-full lg:max-w-[500px] h-full flex flex-col z-[101]">
+          <SheetHeader>
+            <SheetTitle className="text-left">
+              {isEmailMode ? "Email Verification" : "Mobile Verification"}
+            </SheetTitle>
+          </SheetHeader>
+          <div className="flex-1 overflow-y-auto pr-2">
+            <OTPVerificationModal
+              email={email}
+              setEmail={setEmail}
+              mobile={mobile}
+              setMobile={setMobile}
+              isEmailMode={isEmailMode}
+              setIsEmailMode={setIsEmailMode}
+              setIsVerificationModalOpen={setIsVerificationModalOpen}
+              setIsOpen={setIsOpen}
+            />
+          </div>
+        </SheetContent>
+      </Sheet>
+    </>
   );
 };
 

@@ -14,7 +14,7 @@ import CartSidebar from "../Cart/CartSidebar";
 import AccountSidebar from "../Cart/AccountSidebar";
 import SearchSidebar from "../Search/SearchSidebar";
 
-export const Header = () => {
+export const Header = ({ setCartOpen }) => {
   const [isMobileMenu, setIsMobileMenu] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -95,7 +95,7 @@ export const Header = () => {
               </button>
 
 
-              <button  onClick={() => router.push("/cart")} className="relative">
+              <button  onClick={() => setCartOpen(true)}   className="relative">
                 <ShoppingCart size={20} />
                 {cartLength > 0 && (
                   <span className="absolute -top-3 -right-3 bg-[#E8C547] text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">

@@ -43,13 +43,10 @@ export default function ProductPage({ product, related }) {
     [quantity]
   );
 
-  
-
- 
-
     const notify = useCallback(() => {
     dispatch(add({ product, quantity }));
-    toast.success("Success. Check your cart!");
+    // toast.success("Success. Check your cart!");
+     window.openCartSidebar();
   }, [product, quantity]);
 
   const buyNow = useCallback(() => {
